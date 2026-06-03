@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заметки | Notes App</title>
+    <meta name="description" content="Красивое приложение для ведения заметок">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1><i class="fa-solid fa-book-open"></i> Заметки</h1>
+            <button id="add-note-btn" class="btn primary-btn"><i class="fa-solid fa-plus"></i> Новая заметка</button>
+        </header>
+
+        <!-- Модальное окно создания заметки -->
+        <div id="note-modal" class="modal hidden">
+            <div class="modal-content glass-effect">
+                <div class="modal-header">
+                    <h2>Новая заметка</h2>
+                    <button id="close-modal-btn" class="icon-btn"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="note-title" placeholder="Заголовок" autocomplete="off">
+                    <textarea id="note-content" placeholder="О чем вы думаете?..." rows="5"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button id="save-note-btn" class="btn primary-btn">Сохранить</button>
+                </div>
+            </div>
+        </div>
+
+        <main>
+            <div id="notes-grid" class="notes-grid">
+                <!-- Заметки будут добавляться сюда через JS -->
+            </div>
+            <div id="empty-state" class="empty-state hidden">
+                <div class="empty-icon"><i class="fa-regular fa-note-sticky"></i></div>
+                <p>У вас пока нет заметок. Создайте первую!</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
